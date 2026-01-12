@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import { AuthProvider } from './context/AuthContext';
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = import.meta.env.MODE === 'development' ? 'http://localhost:4000' : '/';
 
 function App() {
   return (
